@@ -1,10 +1,9 @@
-HTML
 <!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArithmeToolsLab - Підтримка</title>
+    <title>ArithmeToolsLab - Donation</title>
     <style>
         :root {
             --bg-color: #f4f6f9;
@@ -14,6 +13,7 @@ HTML
             --border-color: #e2e6eb;
             --accent-color: #21a038;
             --accent-hover: #1b852e;
+            --heading-color: #125e20;
         }
 
         body {
@@ -43,41 +43,22 @@ HTML
             text-align: center;
         }
 
-        /* Налаштування вашого логотипа */
-        .logo {
-            width: 96px;
-            height: 96px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 16px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px rgba(89, 255, 83, 0.3); /* Легке зелене світіння в тон бегемоту */
-        }
-
         h1 {
-            font-size: 22px;
+            font-size: 26px;
             margin: 0 0 8px 0;
             font-weight: 700;
+            color: var(--heading-color);
         }
 
         .description {
             color: var(--text-muted);
             font-size: 15px;
-            line-height: 1.5;
             margin: 0;
         }
 
         .card-body {
             padding: 0 32px 32px;
-        }
-
-        .section-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--text-muted);
-            margin: 24px 0 12px;
-            font-weight: 700;
+            margin-top: 16px;
         }
 
         .crypto-box {
@@ -120,6 +101,8 @@ HTML
             font-size: 13px;
             padding: 4px 0 4px 12px;
             transition: color 0.2s;
+            flex-shrink: 0; /* Кнопка більше не буде стискатися */
+            white-space: nowrap; /* Текст не буде переноситися */
         }
 
         .copy-btn:hover {
@@ -157,32 +140,37 @@ HTML
 
     <div class="payment-card">
         <div class="card-header">
-            <img src="Logo_arithmetoolslab_1000.jpg" alt="ArithmeToolsLab Logo" class="logo">
-            
             <h1>ArithmeToolsLab</h1>
-            <p class="description">Donation Crypto. Підтримайте розробку інтерактивних математичних інструментів та їх локалізацію іншими мовами.</p>
+            <p class="description">Donation Crypto</p>
         </div>
 
         <div class="card-body">
-            <div class="section-label">Реквізити для переказу</div>
             
             <div class="crypto-box">
-                <span class="crypto-name">USDT (Мережа TRC-20)</span>
+                <span class="crypto-name">USDT (TRC-20) TRX</span>
                 <div class="crypto-address">
-                    <span id="trc20">TВашГаманецьТут1234567890abcdef</span>
-                    <button class="copy-btn" onclick="copyWallet('trc20', this)">Копіювати</button>
+                    <span id="trc20">TT7fzvrRWvyeq67ma4kLABG31EeVvGWUJV</span>
+                    <button class="copy-btn" onclick="copyWallet('trc20', this)">Copy</button>
                 </div>
             </div>
 
             <div class="crypto-box">
-                <span class="crypto-name">USDT / ETH (Мережа ERC-20)</span>
+                <span class="crypto-name">USDT (ERC-20) ETH</span>
                 <div class="crypto-address">
-                    <span id="erc20">0xВашГаманецьТут1234567890abcdef</span>
-                    <button class="copy-btn" onclick="copyWallet('erc20', this)">Копіювати</button>
+                    <span id="erc20">0x7D95ca15655Eb08c7C3e4e9051a50Ef6958EeCA0</span>
+                    <button class="copy-btn" onclick="copyWallet('erc20', this)">Copy</button>
                 </div>
             </div>
 
-            <a href="#" class="main-action-btn">Повернутися до тренажерів</a>
+            <div class="crypto-box">
+                <span class="crypto-name">USDT (BEP-20) BSC</span>
+                <div class="crypto-address">
+                    <span id="bep20">0x7D95ca15655Eb08c7C3e4e9051a50Ef6958EeCA0</span>
+                    <button class="copy-btn" onclick="copyWallet('bep20', this)">Copy</button>
+                </div>
+            </div>
+
+            <a href="javascript:history.back()" class="main-action-btn">Back</a>
         </div>
     </div>
 
@@ -192,7 +180,7 @@ HTML
             navigator.clipboard.writeText(text).then(() => {
                 const originalText = btn.innerText;
                 
-                btn.innerText = '✓ Скопійовано';
+                btn.innerText = '✓ Copied';
                 btn.style.color = '#2b2b2b';
                 
                 setTimeout(() => {
