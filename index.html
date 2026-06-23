@@ -6,7 +6,7 @@
     <title>ArithmeToolsLab - Donation</title>
     <style>
         :root {
-            --bg-color: #f4f6f9;
+            --bg-color: #edf5f0; /* М'який пастельний світло-зелений фон */
             --card-bg: #ffffff;
             --text-main: #2b2b2b;
             --text-muted: #828282;
@@ -34,7 +34,7 @@
             width: 100%;
             max-width: 440px;
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); /* Трохи м'якша тінь для зеленого фону */
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -74,7 +74,7 @@
 
         .crypto-name {
             font-weight: 600;
-            font-size: 13px;
+            font-size: 16px; /* Розмір шрифту збільшено до 16px */
             margin-bottom: 8px;
             display: block;
             color: var(--text-main);
@@ -98,20 +98,20 @@
             background: none;
             border: none;
             color: var(--accent-color);
-            font-weight: 600;
+            font-weight: 800; 
             cursor: pointer;
             font-size: 13px;
             padding: 4px 0 4px 12px;
             transition: color 0.2s;
             flex-shrink: 0; 
             white-space: nowrap; 
+            text-transform: uppercase; 
         }
 
         .copy-btn:hover {
             color: var(--accent-hover);
         }
 
-        /* Декоративна зелена смуга внизу замість кнопки */
         .bottom-decoration {
             background: var(--accent-color);
             height: 16px;
@@ -134,31 +134,63 @@
                 <span class="crypto-name">Bitcoin (BTC)</span>
                 <div class="crypto-address">
                     <span id="btc">1FtK7bJa8oKuavhUvCrCKhePwGsVLcHagE</span>
-                    <button class="copy-btn" onclick="copyWallet('btc', this)">Copy</button>
+                    <button class="copy-btn" onclick="copyWallet('btc', this)">COPY</button>
                 </div>
             </div>
 
             <div class="crypto-box">
                 <span class="crypto-name">USDT (TRC-20) TRX</span>
                 <div class="crypto-address">
-                    <span id="trc20">TT7fzvrRWvyeq67ma4kLABG31EeVvGWUJV</span>
-                    <button class="copy-btn" onclick="copyWallet('trc20', this)">Copy</button>
+                    <span id="usdt-trc20">TT7fzvrRWvyeq67ma4kLABG31EeVvGWUJV</span>
+                    <button class="copy-btn" onclick="copyWallet('usdt-trc20', this)">COPY</button>
                 </div>
             </div>
 
             <div class="crypto-box">
                 <span class="crypto-name">USDT (ERC-20) ETH</span>
                 <div class="crypto-address">
-                    <span id="erc20">0x7D95ca15655Eb08c7C3e4e9051a50Ef6958EeCA0</span>
-                    <button class="copy-btn" onclick="copyWallet('erc20', this)">Copy</button>
+                    <span id="usdt-erc20">0x7D95ca15655Eb08c7C3e4e9051a50Ef6958EeCA0</span>
+                    <button class="copy-btn" onclick="copyWallet('usdt-erc20', this)">COPY</button>
                 </div>
             </div>
 
             <div class="crypto-box">
                 <span class="crypto-name">USDT (BEP-20) BSC</span>
                 <div class="crypto-address">
-                    <span id="bep20">0x7D95ca15655Eb08c7C3e4e9051a50Ef6958EeCA0</span>
-                    <button class="copy-btn" onclick="copyWallet('bep20', this)">Copy</button>
+                    <span id="usdt-bep20">0x7D95ca15655Eb08c7C3e4e9051a50Ef6958EeCA0</span>
+                    <button class="copy-btn" onclick="copyWallet('usdt-bep20', this)">COPY</button>
+                </div>
+            </div>
+
+            <div class="crypto-box">
+                <span class="crypto-name">USDC (ERC-20) ETH</span>
+                <div class="crypto-address">
+                    <span id="usdc-erc20">0x7D95ca15655Eb08c7C3e4e9051a50Ef6958EeCA0</span>
+                    <button class="copy-btn" onclick="copyWallet('usdc-erc20', this)">COPY</button>
+                </div>
+            </div>
+
+            <div class="crypto-box">
+                <span class="crypto-name">USDC (BEP-20) BSC</span>
+                <div class="crypto-address">
+                    <span id="usdc-bep20">0x7D95ca15655Eb08c7C3e4e9051a50Ef6958EeCA0</span>
+                    <button class="copy-btn" onclick="copyWallet('usdc-bep20', this)">COPY</button>
+                </div>
+            </div>
+
+            <div class="crypto-box">
+                <span class="crypto-name">USDC (SOL) Solana</span>
+                <div class="crypto-address">
+                    <span id="usdc-sol">HzJZGvQHS4VasCiMrKeqWw65BVQYCVZgi3q9VwRUCXxA</span>
+                    <button class="copy-btn" onclick="copyWallet('usdc-sol', this)">COPY</button>
+                </div>
+            </div>
+
+            <div class="crypto-box">
+                <span class="crypto-name">USDC (TRC-20) TRX</span>
+                <div class="crypto-address">
+                    <span id="usdc-trc20">TT7fzvrRWvyeq67ma4kLABG31EeVvGWUJV</span>
+                    <button class="copy-btn" onclick="copyWallet('usdc-trc20', this)">COPY</button>
                 </div>
             </div>
 
