@@ -36,6 +36,8 @@
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .card-header {
@@ -57,7 +59,7 @@
         }
 
         .card-body {
-            padding: 0 32px 32px;
+            padding: 0 32px 24px;
             margin-top: 16px;
         }
 
@@ -101,38 +103,20 @@
             font-size: 13px;
             padding: 4px 0 4px 12px;
             transition: color 0.2s;
-            flex-shrink: 0; /* Кнопка більше не буде стискатися */
-            white-space: nowrap; /* Текст не буде переноситися */
+            flex-shrink: 0; 
+            white-space: nowrap; 
         }
 
         .copy-btn:hover {
             color: var(--accent-hover);
         }
 
-        .main-action-btn {
-            display: block;
-            width: 100%;
+        /* Декоративна зелена смуга внизу замість кнопки */
+        .bottom-decoration {
             background: var(--accent-color);
-            color: #fff;
-            border: none;
-            padding: 16px;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.1s;
-            margin-top: 24px;
-            text-align: center;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(33, 160, 56, 0.2);
-        }
-
-        .main-action-btn:hover {
-            background: var(--accent-hover);
-        }
-
-        .main-action-btn:active {
-            transform: scale(0.98);
+            height: 16px;
+            width: 100%;
+            margin-top: auto;
         }
     </style>
 </head>
@@ -146,6 +130,14 @@
 
         <div class="card-body">
             
+            <div class="crypto-box">
+                <span class="crypto-name">Bitcoin (BTC)</span>
+                <div class="crypto-address">
+                    <span id="btc">1FtK7bJa8oKuavhUvCrCKhePwGsVLcHagE</span>
+                    <button class="copy-btn" onclick="copyWallet('btc', this)">Copy</button>
+                </div>
+            </div>
+
             <div class="crypto-box">
                 <span class="crypto-name">USDT (TRC-20) TRX</span>
                 <div class="crypto-address">
@@ -170,8 +162,9 @@
                 </div>
             </div>
 
-            <a href="javascript:history.back()" class="main-action-btn">Back</a>
         </div>
+
+        <div class="bottom-decoration"></div>
     </div>
 
     <script>
